@@ -372,6 +372,147 @@
   }
   .social-link:hover { color: var(--gold); border-color: var(--gold); }
 
+  /* AI client videos */
+  #ai-videos {
+    background:
+      linear-gradient(135deg, rgba(42,74,58,0.96) 0%, rgba(15,14,13,0.98) 62%),
+      var(--ink);
+    color: var(--cream);
+    overflow: hidden;
+  }
+  #ai-videos::before {
+    content: 'AI';
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+    font-family: var(--serif);
+    font-size: clamp(7rem, 16vw, 18rem);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(240,216,154,0.12);
+    line-height: 1;
+    pointer-events: none;
+  }
+  #ai-videos h2.section-title em { color: var(--gold-light); }
+  #ai-videos .section-tag { color: var(--gold-light); }
+  #ai-videos .section-tag::before { background: var(--gold-light); }
+  .ai-video-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+  .ai-video-intro p {
+    max-width: 440px;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.62);
+    font-weight: 300;
+  }
+  .ai-video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .ai-video-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(250,247,242,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    min-height: 100%;
+    transition: transform 0.3s, border-color 0.3s, background 0.3s;
+  }
+  .ai-video-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(240,216,154,0.42);
+    background: rgba(250,247,242,0.09);
+  }
+  .ai-video-frame {
+    min-height: 178px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 1.3rem;
+    background:
+      radial-gradient(circle at top right, rgba(200,149,58,0.32), transparent 48%),
+      linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  .ai-video-frame::after {
+    content: '';
+    position: absolute;
+    inset: 1rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    pointer-events: none;
+  }
+  .ai-video-play {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    background: var(--gold-light);
+    color: var(--ink);
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 18px 32px rgba(0,0,0,0.22);
+  }
+  .ai-video-platform {
+    align-self: flex-start;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--gold-light);
+    padding: 0.32rem 0.65rem;
+    font-weight: 700;
+  }
+  .ai-video-card h3 {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin-bottom: 0.7rem;
+  }
+  .ai-video-card p {
+    font-size: 0.83rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.64);
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+  }
+  .ai-video-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: auto;
+  }
+  .ai-video-link {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    text-decoration: none;
+    border: 1px solid rgba(240,216,154,0.3);
+    padding: 0.55rem 0.75rem;
+    transition: all 0.2s;
+  }
+  .ai-video-link:hover {
+    background: var(--gold-light);
+    color: var(--ink);
+    border-color: var(--gold-light);
+  }
+
   /* ── CONTACT ── */
   #contact { background: var(--ink); color: var(--cream); text-align: center; }
   #contact h2.section-title { font-size: clamp(2.5rem, 5vw, 4.5rem); }
@@ -430,6 +571,8 @@
     .projects-grid { grid-template-columns: 1fr; }
     .project-card.featured { grid-column: span 1; }
     .social-grid { grid-template-columns: 1fr; }
+    .ai-video-intro { flex-direction: column; align-items: start; }
+    .ai-video-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
@@ -446,6 +589,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Work</a></li>
+    <li><a href="#ai-videos">AI Videos</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="mailto:vershatanwar621@gmail.com" class="nav-cta">Hire Me</a>
@@ -932,6 +1076,71 @@
           <span class="social-service">Brand Aesthetic</span>
         </div>
         <a href="https://www.instagram.com/herbalayurveda123?igsh=NjIyN2g2cXlneXI5" target="_blank" rel="noopener" class="social-link">View on Instagram ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI CLIENT VIDEOS -->
+<section id="ai-videos">
+  <div class="ai-video-intro fade-up">
+    <div>
+      <div class="section-tag">On-Demand AI Video Generation</div>
+      <h2 class="section-title">Client videos made for <em>real campaigns</em></h2>
+    </div>
+    <p>I create short-form AI videos on demand for client briefs, from script direction and visual generation to editing, captions, platform sizing, and final publishing-ready reels or shorts.</p>
+  </div>
+
+  <div class="ai-video-grid">
+    <div class="ai-video-card fade-up">
+      <div class="ai-video-frame">
+        <div class="ai-video-platform">YouTube Shorts</div>
+        <div class="ai-video-play">▶</div>
+      </div>
+      <h3>Bidz Professional — GeM Vendor Assessment Explained</h3>
+      <p>Created an explainer short for manufacturers registering as OEMs on GeM, presenting desktop assessment, video assessment, and consultancy support in a simple, confidence-building format.</p>
+      <div class="social-services">
+        <span class="social-service">Explainer Video</span>
+        <span class="social-service">AI Visuals</span>
+        <span class="social-service">Short-form Edit</span>
+      </div>
+      <div class="ai-video-links">
+        <a href="https://youtube.com/shorts/NZTdn-xOQR8?si=LIwmvzxmaTLebHym" target="_blank" rel="noopener" class="ai-video-link">Watch Short ↗</a>
+      </div>
+    </div>
+
+    <div class="ai-video-card fade-up" style="transition-delay:0.1s">
+      <div class="ai-video-frame">
+        <div class="ai-video-platform">Instagram Reels</div>
+        <div class="ai-video-play">▶</div>
+      </div>
+      <h3>Trans Global Prints — Custom Apparel Reels</h3>
+      <p>Produced two product-led reels for heat transfer stickers and personalized kids' T-shirt prints, highlighting use cases, order prompts, and trendy print-on-demand appeal.</p>
+      <div class="social-services">
+        <span class="social-service">Product Reel</span>
+        <span class="social-service">Caption Writing</span>
+        <span class="social-service">Trend-led Edit</span>
+      </div>
+      <div class="ai-video-links">
+        <a href="https://www.instagram.com/reel/DSjwAePDa2p/?igsh=MXZsMmQ0bWUyOG40eA==" target="_blank" rel="noopener" class="ai-video-link">Sticker Reel ↗</a>
+        <a href="https://www.instagram.com/reel/DXGdkszk4DK/?igsh=bGZxdnlyZHBscWlw" target="_blank" rel="noopener" class="ai-video-link">Kids T-Shirt Reel ↗</a>
+      </div>
+    </div>
+
+    <div class="ai-video-card fade-up" style="transition-delay:0.2s">
+      <div class="ai-video-frame">
+        <div class="ai-video-platform">YouTube Shorts</div>
+        <div class="ai-video-play">▶</div>
+      </div>
+      <h3>VedifAI — Scholarship Aptitude Test 2026</h3>
+      <p>Created a fast-paced education short for VedifAI's scholarship aptitude test, shaped for student attention around UPSC, JEE, NEET, self-improvement, and exam discovery audiences.</p>
+      <div class="social-services">
+        <span class="social-service">Education Promo</span>
+        <span class="social-service">AI Video</span>
+        <span class="social-service">YouTube Short</span>
+      </div>
+      <div class="ai-video-links">
+        <a href="https://youtube.com/shorts/TaM1AJmb3V4?si=ii3B_oZ7c5ewL7fz" target="_blank" rel="noopener" class="ai-video-link">Watch Short ↗</a>
       </div>
     </div>
   </div>
